@@ -8,6 +8,11 @@
 
 :root {
   --mobile-pad: 1.5em;
+  --first-c: slategray;
+  --second-c: darksalmon;
+  --third-c: darkolivegreen;
+  --fourth-c: seagreen;
+  --white-c: ghostwhite;
 }
 html {
   font-family: sans-serif;

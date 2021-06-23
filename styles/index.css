@@ -1,99 +1,137 @@
-@import '_base.css';
-@import '_profile.css';
-
+@import "_base.css";
+@import "_profile.css";
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 100vh;
-    gap: var--(--mobile-pad);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  max-height: 100vh;
+  gap: var--(--mobile-pad);
 }
-
-
 .top {
-    background: slategray; 
-    height: 10vh; 
-    display: flex; 
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--first-c);
+  min-height: 10vh;
 }
-
-.content 
-{
-    background: ghostwhite;
-    height:75vh; 
-    padding: var(--mobile-pad);
-    overflow-y: scroll;
-    display: grid; 
-
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1em;
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-items: center;
+  background: var(--white-c);
+  padding: var(--mobile-pad);
+  width: 100%;
+  overflow-y: scroll;
+  gap: 1em;
+  min-height: 75vh;
 }
-
-
 .content__card {
-    aspect-ratio:  3 / 2;
-    width: 100%;
-    max-width: 400px;  
-    background: darkolivegreen; 
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  border: 4px var(--third-c) solid;
+  padding: var(--mobile-pad);
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  gap: var(--mobile-pad);
 }
-
-.bottom 
-{
-    height: 15vh; 
-    background: darksalmon;
-    padding: var(--mobile-pad);
+.content__card::before {
+  position: absolute;
+  top: -15px;
+  right: 5%;
+  transition: background 0.4s ease-in-out;
+  background-color: var(--fourth-c);
+  background-image: url("../img/noun_bookmark_1382441.svg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  padding: 20px;
+  width: 40px;
+  height: 40px;
+  content: "";
 }
-
-.bottom__nav 
-{
-    display: flex; 
-    justify-content: space-between;
-    align-items: center;
-    height: 100%; 
-    list-style: none;
-
+/* Tinkering to fix aesthetic*/
+.content__card:last-of-type::after {
+  position: absolute;
+  bottom: calc(var(--mobile-pad) * -1);
+  background: transparent;
+  width: 1px;
+  height: var(--mobile-pad);
+  content: "";
 }
-
-.bottom__nav__item img 
-{
-    height: 40px; 
-    width: 40px; 
+.content__card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: var(--mobile-pad);
 }
-
-.bottom__nav__item:hover img
-{
-    opacity: .5;
+.content__card__tags__items {
+  background: var(--fourth-c);
+  padding: 0.5em;
+  color: var(--white-c);
 }
-
+.bottom {
+  background: var(--second-c);
+  padding: var(--mobile-pad);
+  min-height: 15vh;
+}
+.bottom__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  list-style: none;
+}
+.bottom__nav__item img {
+  width: 40px;
+  height: 40px;
+}
+.bottom__nav__item:hover img {
+  opacity: 0.5;
+}
 
 .btn {
-    all: unset; 
-    background: greenyellow;
-    font-size: 1.5rem; 
-    padding: .5em var(--mobile-pad);
-    color: ghostwhite;
+  all: unset;
+  margin: 0 auto;
+  background: greenyellow;
+  cursor: pointer;
+  padding: 0.5em var(--mobile-pad);
+  width: auto;
+  color: var(--white-c);
+  font-size: 1.5rem;
 }
 
 .btn:hover,
 .btn:focus {
-    
-    opacity: .8;
+  opacity: 0.8;
 }
 
-
-
-.btn--logout 
-{
-    background: crimson;
+.content__card__btn:active {
+  background: var(--third-c);
 }
 
+.content__card__btn + .content__card__answer {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+.content__card__btn:active + .content__card__answer {
+  display: block;
+  opacity: 1;
 
-@media screen and (min-width: 321px) 
-{
-    .bottom__nav {
-    justify-content: center;
+  transition: opacity 0.4s ease-in-out;
+  color: var(--third-c);
+}
+.btn--logout {
+  background: crimson;
+}
+
+@media screen and (min-width: 321px) {
+  .bottom__nav {
     align-items: center;
+    justify-content: center;
     gap: var(--mobile-pad);
-    }
+  }
 }
