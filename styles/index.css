@@ -1,1 +1,99 @@
 @import '_base.css';
+@import '_profile.css';
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    gap: var--(--mobile-pad);
+}
+
+
+.top {
+    background: slategray; 
+    height: 10vh; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.content 
+{
+    background: ghostwhite;
+    height:75vh; 
+    padding: var(--mobile-pad);
+    overflow-y: scroll;
+    display: grid; 
+
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1em;
+}
+
+
+.content__card {
+    aspect-ratio:  3 / 2;
+    width: 100%;
+    max-width: 400px;  
+    background: darkolivegreen; 
+}
+
+.bottom 
+{
+    height: 15vh; 
+    background: darksalmon;
+    padding: var(--mobile-pad);
+}
+
+.bottom__nav 
+{
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    height: 100%; 
+    list-style: none;
+
+}
+
+.bottom__nav__item img 
+{
+    height: 40px; 
+    width: 40px; 
+}
+
+.bottom__nav__item:hover img
+{
+    opacity: .5;
+}
+
+
+.btn {
+    all: unset; 
+    background: greenyellow;
+    font-size: 1.5rem; 
+    padding: .5em var(--mobile-pad);
+    color: ghostwhite;
+}
+
+.btn:hover,
+.btn:focus {
+    
+    opacity: .8;
+}
+
+
+
+.btn--logout 
+{
+    background: crimson;
+}
+
+
+@media screen and (min-width: 321px) 
+{
+    .bottom__nav {
+    justify-content: center;
+    align-items: center;
+    gap: var(--mobile-pad);
+    }
+}

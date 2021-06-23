@@ -6,6 +6,9 @@
   padding: 0;
 }
 
+:root {
+  --mobile-pad: 1.5em;
+}
 html {
   font-family: sans-serif;
 }
