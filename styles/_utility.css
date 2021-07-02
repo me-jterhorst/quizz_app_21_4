@@ -1,10 +1,21 @@
 .bookmarked {
   fill: var(--third-c);
 }
+.dark-mode-txt {
+  color: white;
+}
+.dark-mode-bg {
+  background: #333;
+}
+.dark-mode {
+  fill: var(--third-c);
+  color: var(--third-c);
+}
 
 .hidden {
   visibility: hidden;
   position: absolute;
   left: -1000px;
   opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
