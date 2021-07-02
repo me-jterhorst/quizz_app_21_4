@@ -19,3 +19,7 @@
 html {
   font-family: sans-serif;
 }
+
+main:last-child {
+  margin-bottom: 6em;
+}

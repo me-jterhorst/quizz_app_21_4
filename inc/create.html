@@ -11,9 +11,30 @@
       <h1>Quiz App</h1>
     </header>
     <main class="content">
-      <div class="content__card"></div>
-    </main>
+             <form class="create">
+          <fieldset>
+            <legend>Question</legend>
+            <label for="create__question" class="create__headline"
+              >Add Your Question
+            </label>
+            <textarea name="create__question" id="create__question"></textarea>
+          </fieldset>
 
+          <fieldset>
+            <legend>Answer</legend>
+            <label for="create__answer" class="create__headline"
+              >Add Your Answer
+            </label>
+            <textarea name="create__answer" id="create__answer"></textarea>
+          </fieldset>
+          <label for="create__tags" class="create__headline"
+            >Add Your Tags seperated by a comma (,)</label
+          >
+          <input type="text" name="create__tags" id="create__tags" autocomplete="off"/>
+
+          <button type="submit" class="btn">Create Question</button>
+        </form>
+    </main>
     <footer class="bottom">
       <ul class="bottom-nav">
         <li class="bottom-nav__item">
@@ -37,6 +58,7 @@
           </a>
         </li>
       </ul>
-    </footer>
+    <!-- </footer> -->
+    <script src="../app/app.js"></script>
   </body>
 </html>
