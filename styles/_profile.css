@@ -1,40 +1,34 @@
 /* Profile */
-
 .profile {
-    height: 75vh;
-    padding: var(--mobile-pad);
-    overflow-y: scroll;
+  padding: var(--mobile-pad);
+  height: auto;
+  min-height: 75vh;
+  overflow-y: scroll;
 }
-
-.profile>*:not(:first-child) {
-    margin-top: 1.5em;
+.profile > *:not(:first-child) {
+  margin-top: 1.5em;
 }
-
 .profile__img {
-    height: 200px; 
-    width: 200px; 
-    background: slategray; 
-    border-radius: 50%;
-    margin: 0 auto; 
-    display: block; 
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: slategray;
+  width: 200px;
+  height: 200px;
 }
-
 .profile__headline {
-    color: slateblue;
-    font-size: 2rem;
+  color: slateblue;
+  font-size: 2rem;
 }
 .profile__txt {
-
-    max-width: 60ch;
+  max-width: 60ch;
 }
-
 .profile__tags {
-    list-style: none;
-    display: flex; 
-    gap: var(--mobile-pad);
+  display: flex;
+  list-style: none;
+  gap: var(--mobile-pad);
 }
-
-.profile__tags__item {
-    background: seagreen;
-    padding: .5em;
+.profile__item {
+  background: var(--fourth-c);
+  padding: 0.5em;
 }
